@@ -48,6 +48,13 @@
             #endregion
             #endregion
 
+
+            #region Apply For Class ListGenerator
+
+            Console.WriteLine(ListGenerator.ProductList[0]);
+            Console.WriteLine(ListGenerator.customerList[0]);
+
+            #endregion
         }
     }
 }
