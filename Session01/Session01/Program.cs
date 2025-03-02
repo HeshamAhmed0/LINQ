@@ -224,7 +224,7 @@ namespace Session01
 
 
             //Dictionary<long, string> DProduct = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0).ToDictionary(P => P.ProductID,P=>P.ProductName);   
-         
+
             //HashSet<Product> HashSetProduct = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0).ToHashSet();   
 
             //ArrayList obj =new ArrayList()
@@ -242,10 +242,89 @@ namespace Session01
             //{
             //    Console.WriteLine(item);
             //}
-                                                 
+
             #endregion
 
+            #region Generation Operator
 
+            /* Range Operator */
+
+            // => wil Return Range From 0 To 499
+            //var Result = Enumerable.Range(0, 500);
+            //foreach (var result in Result) 
+            //{
+            //    Console.Write($"{result} ");
+            //}
+
+
+            /* Repeat Operator */
+
+            // Will Repeat number 2  => 50 
+            //var Result = Enumerable.Repeat(2, 50);
+            //foreach (var result in Result)
+            //{
+            //    Console.Write($"{result} ");
+            //}
+
+            /* empty Operator */
+
+            //var Result = Enumerable.Empty<Product>();
+            //foreach (var result in Result)
+            //{
+            //    Console.Write($"{result} ");
+            //}
+
+            #endregion
+
+            #region Set Operator
+            /*Union*/     //Without Dublication 
+                          //var Sqn01 = Enumerable.Range(0, 100);
+                          //var Sqn02 = Enumerable.Range(50, 149);
+                          //var Result = Sqn01.Union(Sqn02);
+                          //foreach (var result in Result)
+                          //{
+                          //    Console.Write($"{ result} , ");
+                          //}
+
+
+            /*Concat [UnionAll]*/   // With dublication
+                                    //var Sqn01 = Enumerable.Range(0, 100);
+                                    //var Sqn02 = Enumerable.Range(50, 149);
+                                    //var Result = Sqn01.Concat(Sqn02);
+                                    //foreach (var result in Result)
+                                    //{
+                                    //    Console.Write($"{result} , ");
+                                    //}
+
+            /*Distincit*/
+
+            //var Sqn01 = Enumerable.Range(0, 100);
+            //var Sqn02 = Enumerable.Range(50, 149);
+            //var Result = Sqn01.Concat(Sqn02);
+            //Result = Result.Distinct();
+            //foreach (var result in Result)
+            //{
+            //    Console.Write($"{result} , ");
+            //}
+
+            ///*Interset*/ //return  the numbers in thr fist sequence and in the second sequence
+            //var Sqn01 = Enumerable.Range(0, 100);
+            //var Sqn02 = Enumerable.Range(50, 149);
+            //var Result = Sqn01.Intersect(Sqn02);
+            //foreach (var result in Result)
+            //{
+            //    Console.Write($"{result} , ");
+            //}
+
+            /*Except*/
+            var Sqn01 = Enumerable.Range(0, 100);
+            var Sqn02 = Enumerable.Range(50, 149);
+            var Result = Sqn01.Except(Sqn02);
+            foreach (var result in Result)
+            {
+                Console.Write($"{result} , ");
+            }
+            #endregion
         }
     }
 }
