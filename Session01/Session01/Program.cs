@@ -89,6 +89,8 @@
             //} 
             #endregion
             #endregion
+
+
             #region Select && Select Many 
             #region Select 
             // Fluent Syntax 
@@ -128,16 +130,45 @@
             //}
 
             // Query Syntax 
-            var Result = from C in ListGenerator.customerList
-                         from O in C.Orders
-                         select O;
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }
+            //var Result = from C in ListGenerator.customerList
+            //             from O in C.Orders
+            //             select O;
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            // Fluent Syntax
+            //var Result = ListGenerator.ProductList.Select(P => new {ProductName = P.ProductName , ProductId =P.ProductID});
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            // Fluent Syntax 
+            var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock > 0)
+                                                 .Select(P=> new {
+                                                 ProductName =P.ProductName,
+                                                 productId =P.ProductID,
+                                                 OldSalary=P.UnitPrice,
+                                                 NewSalary=P.UnitPrice-P.UnitPrice * 0.1M,
+                                                 });
+
+
+            //Query Syntax
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             #endregion
 
             #endregion
+
+
             #endregion
         }
     }
