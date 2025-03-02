@@ -179,18 +179,38 @@
             #endregion
 
             #region Element Operator
-            var Result =ListGenerator.ProductList.First();
-             Result =ListGenerator.ProductList.Last();
-             Result =ListGenerator.ProductList.FirstOrDefault();
-             Result =ListGenerator.ProductList.LastOrDefault();
-             Result =ListGenerator.ProductList.ElementAt(0);
-             Result =ListGenerator.ProductList.ElementAtOrDefault(0);
-             Result =ListGenerator.ProductList.Single();
-             Result =ListGenerator.ProductList.SingleOrDefault();
+            //var Result =ListGenerator.ProductList.First();
+            // Result =ListGenerator.ProductList.Last();
+            // Result =ListGenerator.ProductList.FirstOrDefault();
+            // Result =ListGenerator.ProductList.LastOrDefault();
+            // Result =ListGenerator.ProductList.ElementAt(0);
+            // Result =ListGenerator.ProductList.ElementAtOrDefault(0);
+            // Result =ListGenerator.ProductList.Single();
+            // Result =ListGenerator.ProductList.SingleOrDefault();
 
-            
-            Console.WriteLine(Result);
+
+            //Console.WriteLine(Result);
             #endregion
+
+            #region Aggregate Operator
+
+            #region Count
+            //var Result = ListGenerator.ProductList.Count();//LINQ Operator
+            //Result = ListGenerator.ProductList.Count();// List Operator
+            #endregion
+
+            #region Max ^^ Min
+            //var Result = ListGenerator.ProductList.Max();
+            //var Result = ListGenerator.ProductList.Min();
+            //Console.WriteLine(Result);
+            #endregion
+
+            //string[] names = { "hesham", "ahmed", "hassan" };
+            //var result= names.Aggregate((str01,str02)=> $"{str01} {str02}");
+            //Console.WriteLine(result);
+            #endregion
+
+
 
             #endregion
         }
