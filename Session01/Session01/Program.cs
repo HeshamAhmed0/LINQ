@@ -170,14 +170,27 @@
 
             #region Order Operators
 
-            var Result = ListGenerator.ProductList.OrderByDescending(P => P.UnitPrice).ThenByDescending(P => P.ProductID);
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }
+            //var Result = ListGenerator.ProductList.OrderByDescending(P => P.UnitPrice).ThenByDescending(P => P.ProductID);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             #endregion
 
+            #region Element Operator
+            var Result =ListGenerator.ProductList.First();
+             Result =ListGenerator.ProductList.Last();
+             Result =ListGenerator.ProductList.FirstOrDefault();
+             Result =ListGenerator.ProductList.LastOrDefault();
+             Result =ListGenerator.ProductList.ElementAt(0);
+             Result =ListGenerator.ProductList.ElementAtOrDefault(0);
+             Result =ListGenerator.ProductList.Single();
+             Result =ListGenerator.ProductList.SingleOrDefault();
+
+            
+            Console.WriteLine(Result);
+            #endregion
 
             #endregion
         }
