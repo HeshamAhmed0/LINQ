@@ -1,4 +1,7 @@
-﻿namespace Session01
+﻿using System.Collections;
+using Session01.Data;
+
+namespace Session01
 {
     internal class Program
     {
@@ -47,7 +50,6 @@
             //foreach (var Numbers in EvenNumbers) { Console.WriteLine($"{Numbers} "); }
             #endregion
             #endregion
-
 
             #region Apply For Class ListGenerator
 
@@ -213,6 +215,37 @@
 
 
             #endregion
+
+            #region Castin Operator 
+            //List<Product> Product01=ListGenerator.ProductList.Where(P => P.UnitsInStock==0).ToList();   //  Cassting to List
+            //Product[] Product01=ListGenerator.ProductList.Where(P => P.UnitsInStock==0).ToArray();       //  casting to array 
+
+            //Dictionary<long, Product> DProduct = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0).ToDictionary(P => P.ProductID);   // Casting To Dictionary  // First Overlad
+
+
+            //Dictionary<long, string> DProduct = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0).ToDictionary(P => P.ProductID,P=>P.ProductName);   
+         
+            //HashSet<Product> HashSetProduct = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0).ToHashSet();   
+
+            //ArrayList obj =new ArrayList()
+            //{
+            //    "Hesham",
+            //    "Ahmed",
+            //    1,
+            //    2,
+            //    3,
+            //    5
+            //};
+            //var Result = obj.OfType<string>();
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+                                                 
+            #endregion
+
+
         }
     }
 }
