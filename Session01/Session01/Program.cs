@@ -327,6 +327,17 @@ namespace Session01
                         //    Console.Write($"{result} , ");
                         //}
             #endregion
+
+            #region Quantifier Operator
+            var sq01 = Enumerable.Range(0, 100);
+            var sq02= Enumerable.Range(0, 1001);
+
+            Console.WriteLine(sq01.Any());
+            Console.WriteLine(sq01.Any(P => P>10));
+            Console.WriteLine(sq01.All(P=>P ==0));
+            Console.WriteLine(sq01.SequenceEqual(sq02));
+            #endregion
+
         }
     }
 }
