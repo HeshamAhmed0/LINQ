@@ -148,13 +148,13 @@
 
 
             // Fluent Syntax 
-            var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock > 0)
-                                                 .Select(P=> new {
-                                                 ProductName =P.ProductName,
-                                                 productId =P.ProductID,
-                                                 OldSalary=P.UnitPrice,
-                                                 NewSalary=P.UnitPrice-P.UnitPrice * 0.1M,
-                                                 });
+            //var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock > 0)
+            //                                     .Select(P=> new {
+            //                                     ProductName =P.ProductName,
+            //                                     productId =P.ProductID,
+            //                                     OldSalary=P.UnitPrice,
+            //                                     NewSalary=P.UnitPrice-P.UnitPrice * 0.1M,
+            //                                     });
 
 
             //Query Syntax
@@ -165,6 +165,16 @@
             //}
 
             #endregion
+
+            #endregion
+
+            #region Order Operators
+
+            var Result = ListGenerator.ProductList.OrderByDescending(P => P.UnitPrice).ThenByDescending(P => P.ProductID);
+            foreach (var item in Result)
+            {
+                Console.WriteLine(item);
+            }
 
             #endregion
 
