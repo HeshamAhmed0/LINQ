@@ -339,14 +339,29 @@ namespace Session01
             #endregion
 
             #region Zipping Operator
-            string[] Names = { "Hesham", "Ahmed", "Hassan", "Ali" };
-            int[] numbers = Enumerable.Range(1,10).ToArray();
-            char[] Characters = { 'A', 'B', 'C', 'D' };
-            //var Result = Names.Zip(numbers); // This is the first overload
-            //var Result =Names.Zip(numbers,(name,number)=>new {Name = name ,Number = number});
-           var  Result =Names.Zip(numbers,Characters);
-            foreach (var item in Result)
-            { Console.WriteLine(item); }
+            // string[] Names = { "Hesham", "Ahmed", "Hassan", "Ali" };
+            // int[] numbers = Enumerable.Range(1,10).ToArray();
+            // char[] Characters = { 'A', 'B', 'C', 'D' };
+            // //var Result = Names.Zip(numbers); // This is the first overload
+            // //var Result =Names.Zip(numbers,(name,number)=>new {Name = name ,Number = number});
+            //var  Result =Names.Zip(numbers,Characters);
+            // foreach (var item in Result)
+            // { Console.WriteLine(item); }
+            #endregion
+
+            #region Grouping Operators
+            var result = from p in ListGenerator.ProductList
+                         group p by p.Category;
+
+            foreach (var c in result)
+            {
+                Console.WriteLine(c.Key);
+                foreach
+                    (var c2 in c)
+                {
+                    Console.WriteLine($"                   {c2}");
+                }
+            }
             #endregion
         }
     }
