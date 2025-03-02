@@ -51,9 +51,93 @@
 
             #region Apply For Class ListGenerator
 
-            Console.WriteLine(ListGenerator.ProductList[0]);
-            Console.WriteLine(ListGenerator.customerList[0]);
+            //Console.WriteLine(ListGenerator.ProductList[0]);
+            //Console.WriteLine(ListGenerator.customerList[0]);
 
+            #region Where
+            // Fluent Syntax
+            //var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock == 0);
+            //foreach (var Product in Result) 
+            //{
+            //    Console.WriteLine(Product);
+            //}
+
+
+            //Query Syntax  
+
+            //Result = from P in ListGenerator.ProductList
+            //         where P.UnitsInStock == 0
+            //         select P;
+
+            // Fluent Syntax
+            ////var Result = ListGenerator.ProductList.Where(P => P.UnitsInStock > 0 && P.Category == "Meat/Poultry");
+            //Query Syntax
+            //var Result = from P in ListGenerator.ProductList
+            //             where P.UnitsInStock > 0 && P.Category == "Meat/Poultry"
+            //             select P;
+            //foreach (var Product in Result)
+            //{
+            //    Console.WriteLine(Product);
+            //}
+            #region Indexed Where
+
+            //var Result = ListGenerator.ProductList.Where((S, L) => L < 10 && S.UnitsInStock > 0);
+
+            //foreach (var Product in Result)
+            //{
+            //    Console.WriteLine(Product);
+            //} 
+            #endregion
+            #endregion
+            #region Select && Select Many 
+            #region Select 
+            // Fluent Syntax 
+            //var Result = ListGenerator.ProductList.Select(P => P.ProductName);
+            //foreach(var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            // Query Syntax
+            //var Result =from P in ListGenerator.ProductList
+            //            select P.ProductName;
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            // Select From Customer 
+            //var Result = ListGenerator.customerList.Select(P => P.CustomerName);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //var Result =from P in ListGenerator.customerList
+            //            select P.CustomerName;
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //Fluent Syntax 
+            //var Result = ListGenerator.customerList.SelectMany(P => P.Orders);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            // Query Syntax 
+            var Result = from C in ListGenerator.customerList
+                         from O in C.Orders
+                         select O;
+            foreach (var item in Result)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
+
+            #endregion
             #endregion
         }
     }
