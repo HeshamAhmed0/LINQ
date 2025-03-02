@@ -53,8 +53,10 @@ namespace Session01
 
             #region Apply For Class ListGenerator
 
+            #region Test ListGenerator
             //Console.WriteLine(ListGenerator.ProductList[0]);
-            //Console.WriteLine(ListGenerator.customerList[0]);
+            //Console.WriteLine(ListGenerator.customerList[0]); 
+            #endregion
 
             #region Where
             // Fluent Syntax
@@ -316,14 +318,14 @@ namespace Session01
             //    Console.Write($"{result} , ");
             //}
 
-            /*Except*/
-            var Sqn01 = Enumerable.Range(0, 100);
-            var Sqn02 = Enumerable.Range(50, 149);
-            var Result = Sqn01.Except(Sqn02);
-            foreach (var result in Result)
-            {
-                Console.Write($"{result} , ");
-            }
+            /*Except*/  // Return Element There in Sequence 1 and not in Sequence 2
+                        //var Sqn01 = Enumerable.Range(0, 100);
+                        //var Sqn02 = Enumerable.Range(50, 149);
+                        //var Result = Sqn01.Except(Sqn02);
+                        //foreach (var result in Result)
+                        //{
+                        //    Console.Write($"{result} , ");
+                        //}
             #endregion
         }
     }
