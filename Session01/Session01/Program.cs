@@ -329,15 +329,25 @@ namespace Session01
             #endregion
 
             #region Quantifier Operator
-            var sq01 = Enumerable.Range(0, 100);
-            var sq02= Enumerable.Range(0, 1001);
+            //var sq01 = Enumerable.Range(0, 100);
+            //var sq02= Enumerable.Range(0, 1001);
 
-            Console.WriteLine(sq01.Any());
-            Console.WriteLine(sq01.Any(P => P>10));
-            Console.WriteLine(sq01.All(P=>P ==0));
-            Console.WriteLine(sq01.SequenceEqual(sq02));
+            //Console.WriteLine(sq01.Any());
+            //Console.WriteLine(sq01.Any(P => P>10));
+            //Console.WriteLine(sq01.All(P=>P ==0));
+            //Console.WriteLine(sq01.SequenceEqual(sq02));
             #endregion
 
+            #region Zipping Operator
+            string[] Names = { "Hesham", "Ahmed", "Hassan", "Ali" };
+            int[] numbers = Enumerable.Range(1,10).ToArray();
+            char[] Characters = { 'A', 'B', 'C', 'D' };
+            //var Result = Names.Zip(numbers); // This is the first overload
+            //var Result =Names.Zip(numbers,(name,number)=>new {Name = name ,Number = number});
+           var  Result =Names.Zip(numbers,Characters);
+            foreach (var item in Result)
+            { Console.WriteLine(item); }
+            #endregion
         }
     }
 }
