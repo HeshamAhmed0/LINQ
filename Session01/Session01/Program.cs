@@ -97,20 +97,20 @@ namespace Session01
 
             #region Select && Select Many 
             #region Select 
-            Fluent Syntax
-            var Result = ListGenerator.ProductList.Select(P => P.ProductName);
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }
+            //Fluent Syntax
+            //var Result = ListGenerator.ProductList.Select(P => P.ProductName);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            Query Syntax
-            var Result = from P in ListGenerator.ProductList
-                         select P.ProductName;
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }
+            //Query Syntax
+            //var Result = from P in ListGenerator.ProductList
+            //             select P.ProductName;
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
 
             // Select From Customer 
